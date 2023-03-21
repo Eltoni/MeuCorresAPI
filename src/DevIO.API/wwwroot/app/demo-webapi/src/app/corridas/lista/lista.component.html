@@ -1,0 +1,61 @@
+<main role="main" class="pb-3">
+
+
+  <h1>Lista de Corridas</h1>
+  <hr>
+
+  <p>
+    <a class="btn btn-info" [routerLink]="['/cadastro-corridas']">Nova Corrida</a>
+  </p>
+
+  <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th></th>
+        <th>Veiculo</th>
+        <th>Primeiro Motorista</th>
+        <th>Segundo Motorista</th>
+        <th>Data Hora Inicio</th>
+        <th>Data Hora Fim</th>
+        <th>Tipo Viagem</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let corrida of corridas'>
+        <td>
+          {{ corrida.nomePlaca }} - {{ corrida.nomeModelo }}
+        </td>
+        <td>
+          {{ corrida.nomeMotoristaPrimeiro }}
+        </td>
+        <td>
+          {{ corrida.nomeMotoristaSegundo }}
+        </td>
+        <td>
+          {{ corrida.dataHoraSaida  }}
+        </td>
+        <td>
+          {{ corrida.dataHoraChegada  }}
+        </td>
+        <td>
+          {{ corrida.tipoViagem  }}
+        </td>
+  
+        <td class="text-right">
+          <a class="btn btn-warning" href="#">
+            <span class="fa fa-search"></span>
+          </a>
+          <a class="btn btn-info" href="#">
+            <span class="fa fa-pencil-alt"></span>
+          </a>
+          <a class="btn btn-danger" href="#">
+            <span class="fa fa-trash"></span>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</main>
