@@ -22,12 +22,15 @@ namespace DevIO.Data.Repository
                 .Include(c => c.Corridas)
                .FirstOrDefaultAsync(c => c.Id == id);
 
-
-
-
         }
 
-      
+        public async Task<IEnumerable<Veiculo>> GetTodos()
+        {
+            var veiculos = await Db.Veiculos
+                 .Include(c => c.Corridas).ToListAsync();
+
+            return veiculos;
+        }
     }
 }
     

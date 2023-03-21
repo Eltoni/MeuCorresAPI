@@ -7,6 +7,7 @@ namespace DevIO.Data.Repository
 {
     public class MotoristaRepository : Repository<Motorista>, IMotoristaRepository
     {
+
         public MotoristaRepository(MeuDbContext context) : base(context)
         {
         }

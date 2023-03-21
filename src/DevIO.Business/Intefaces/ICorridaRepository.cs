@@ -6,6 +6,7 @@ namespace DevIO.Business.Intefaces
     {
         Task <Corrida> ObterCorridaVeiculo(Guid veiculoId);
         Task<IEnumerable<Corrida>> ObterCorridasVeiculos();
+        Task<IEnumerable<Corrida>> ObterTodasCorridasVeiculos();
         Task<IEnumerable<Corrida>> ObterCorridasPorVeiculo(Guid id);
     }
 }
