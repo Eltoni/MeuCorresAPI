@@ -1,6 +1,8 @@
 using DevIO.API.Configuration;
 using DevIO.Data.Context;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +21,13 @@ builder.Services.AddDbContext<MeuDbContext>(options =>
 // Add services to the container.
 
 //builder.Services.AddControllers();
-builder.Services.AddControllers(options => options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
+builder.Services.AddControllers(options => {
+    options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true;
+    
+}).AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
