@@ -28,7 +28,16 @@ namespace DevIO.Data.Repository
         {
             var veiculos = await Db.Veiculos
                  .Include(c => c.Corridas).ToListAsync();
-           
+
+            //veiculos.ForEach(c => {
+            //    foreach (var it in c.Corridas)
+            //    {
+            //        it.PrimeiroMotorista = Db.Motoristas.FirstOrDefault(x => x.Id == it.IdMotoristaPrimeiro);
+            //        it.SegundoMotorista = Db.Motoristas.FirstOrDefault(x => x.Id == it.IdMotoristaSegundo);
+            //    }
+            //});
+
+
             foreach (var item in veiculos)
                 foreach (var it in item.Corridas)
                 {
