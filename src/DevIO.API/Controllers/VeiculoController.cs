@@ -30,6 +30,16 @@ namespace DevIO.API.Controllers
             return veiculo;
         }
 
+
+        //[HttpGet("getAll")]
+        //public async Task<IEnumerable<Veiculo>> GetAll()
+        //{
+        //    var veiculo =await _veiculoRepository.GetTodos();
+        //    return veiculo;
+        //}
+
+
+
         [HttpGet("{id:guid}")]
         public async Task<ActionResult<VeiculoViewModel>> ObterPorId(Guid id)
         {
@@ -43,8 +53,11 @@ namespace DevIO.API.Controllers
         [NonAction]
         public async Task<VeiculoViewModel> ObterVeiculo(Guid id)
         {
-          //  return _mapper.Map<VeiculoViewModel>(await _veiculoRepository.ObterVeiculo(id));
-            return _mapper.Map<VeiculoViewModel>(await _veiculoRepository.ObterVeiculoCorridas(id));
+            //  return _mapper.Map<VeiculoViewModel>(await _veiculoRepository.ObterVeiculo(id));
+            //   return _mapper.Map<VeiculoViewModel>(await _veiculoRepository.ObterVeiculoCorridas(id));
+
+            return _mapper.Map<VeiculoViewModel>(await _veiculoRepository.ObterVeiculosComId(id));
+
 
         }
 
