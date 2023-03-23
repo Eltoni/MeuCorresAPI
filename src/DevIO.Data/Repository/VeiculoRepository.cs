@@ -16,6 +16,10 @@ namespace DevIO.Data.Repository
                 .FirstOrDefaultAsync(c => c.Id == id);
         }
 
+<<<<<<< Updated upstream
+=======
+        //oi - 1234567890-9876543
+>>>>>>> Stashed changes
         public async Task<Veiculo> ObterVeiculoCorridas(Guid id)
         {
             return await Db.Veiculos.AsNoTracking()

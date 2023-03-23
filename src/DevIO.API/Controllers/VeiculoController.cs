@@ -37,6 +37,15 @@ namespace DevIO.API.Controllers
             return veiculo;
         }
 
+        //[HttpGet("getAll")]
+        //public async Task<IEnumerable<Veiculo>> GetAll()
+        //{
+        //    var veiculo =await _veiculoRepository.GetTodos();
+        //    return veiculo;
+        //}
+
+        //eltno
+
         [HttpGet("{id:guid}")]
         public async Task<ActionResult<VeiculoViewModel>> ObterPorId(Guid id)
         {
