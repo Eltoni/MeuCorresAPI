@@ -15,10 +15,6 @@ namespace DevIO.Business.Models
         public Motorista PrimeiroMotorista { get; set; }
         public Motorista SegundoMotorista { get; set; }
         public Veiculo Veiculo { get; set; }
-
-     
-        
-
     }
 }
 

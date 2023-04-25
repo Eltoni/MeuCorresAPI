@@ -40,7 +40,7 @@ namespace DevIO.Data.Repository
                 foreach (var it in item.CorridasPrimeiroMotorista)
                 {
                     it.Veiculo = await Db.Veiculos.FirstOrDefaultAsync(x => x.Id == it.VeiculoId);
-                   
+
                 }
 
             foreach (var item in motoristas)

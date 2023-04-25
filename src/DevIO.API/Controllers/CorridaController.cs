@@ -36,6 +36,13 @@ namespace DevIO.API.Controllers
             return corrida;
         }
 
+        [HttpGet("getAll")]
+        public async Task<IEnumerable<Corrida>> GetAll()
+        {
+            var corrida = await _corridaRepository.ObterTodasCorridasVeiculos();
+            return corrida;
+        }
+
 
         [HttpGet("{id:guid}")]
         public async Task<ActionResult<CorridaViewModel>> ObterPorId(Guid id)

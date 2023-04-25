@@ -31,5 +31,20 @@ namespace DevIO.Data.Repository
             return await Buscar(p => p.VeiculoId == veiculoId);
         }
 
+        public async Task<IEnumerable<Corrida>> ObterTodasCorridasVeiculos()
+        {
+            try
+            {
+                var retorno = await Db.Corridas.Include(f => f.Veiculo.Corridas).ToListAsync();
+                //.FirstOrDefaultAsync(p => p.Id == id);
+                return retorno;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            
+        }
     }
 }

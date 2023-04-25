@@ -49,18 +49,6 @@ namespace DevIO.Business.Services
 
         public async Task<bool> Remover(Guid id)
         {
-
-            if (_motoristaRepository.ObterMotoristaCorridasVeiculo(id).Result.CorridasPrimeiroMotorista.Any())
-            {
-                Notificar("O Motorista possui corridas cadastrados!");
-                return false;
-            }
-
-
-
-
-            await _motoristaRepository.Remover(id);
-
             //if (_motoristaRepository.ObterMotoristaCorridasVeiculo(id).Result.Corridas.Any())
             //{
             //    Notificar("O Motorista possui corridas cadastrados!");
